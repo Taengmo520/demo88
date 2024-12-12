@@ -1,0 +1,8 @@
+<div *ngIf="selectedHome">
+    <h2>{{selectedHome.home_name | uppercase}} Details</h2>
+    <div><span>id: </span>{{selectedHome.home_code}}</div>
+    <div>
+      <label for="home-name">Home name: </label>
+      <input id="home-name" [(ngModel)]="selectedHome.home_name" placeholder="name">
+    </div>
+  </div>

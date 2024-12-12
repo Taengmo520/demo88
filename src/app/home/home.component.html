@@ -1,0 +1,33 @@
+<a routerLink="/">Back</a>
+<p>home works!</p>
+<p>{{title}}</p>
+<h2>{{home.home_name}} Detail</h2>
+<div><span>home_code:</span>{{home.home_code}}</div>
+<div><span>home_name:</span>{{home.home_name}}</div>
+<br>
+<div>
+    <label for="name">Home name:</label>
+    <input id="name" [(ngModel)]="home.home_name" placeholder="name">
+</div>
+<h2>My Home</h2>
+<ul class="homes">
+  <li *ngFor="let home of homes">
+    <button type="button" (click)="onSelect(home)">
+      <span class="badge">{{home.home_code}}</span> 
+      <span class="name">{{home.home_name}}</span>
+    </button>
+    <li>
+</ul>
+
+<div *ngIf="selectedHome">
+    <h2>{{selectedHome.home_name | uppercase}} Details</h2>
+    <div>id: {{selectedHome.home_code}}</div>
+    <div>
+      <label for="home-name">Home name: </label>
+      <input id="home-name" [(ngModel)]="selectedHome.home_name" placeholder="name">
+    </div>
+  </div>
+
+<app-home-detail [home1]="selectedHome"></app-home-detail>
+
+<!-- <p>{{home2}}</p> -->
